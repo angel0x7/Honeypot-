@@ -1,4 +1,4 @@
-# 🔐 Rapport de Lab – Mise en place d’un SOC sur Azure avec Microsoft Sentinel
+# 🔐 Cyber Lab Azure – Mise en place d’un SOC avec Microsoft Sentinel
 
 ## 📘 Introduction
 Ce projet met en place un **SOC (Security Operations Center) ** dans Microsoft Azure, centré autour d’un **honeypot cloud**. La machine virtuelle exposée simule volontairement une cible vulnérable pour attirer et enregistrer de véritables tentatives d’attaque. Les logs de sécurité capturés sont ensuite centralisés, analysés et visualisés via **Microsoft Sentinel**, offrant un environnement opérationnel pour la détection de menaces et les opérations Blue Team.
@@ -18,7 +18,7 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
 - **Microsoft Sentinel** connecté au Workspace  
 - **Watchlist géographique** enrichissant chaque IP malveillante avec pays, ville, latitude/longitude  
 
-📸 **Image à insérer ici :**  
+📸 **Image :**  
 ![Architecture du Lab](images/shema.png)  
 *Légende : Schéma global mettant en évidence le honeypot exposé, le VNet, le NSG, le Log Analytics Workspace et Sentinel.*
 
@@ -35,7 +35,7 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
   - HTTP (80) / HTTPS (443)  
 - **IP publique statique**  
 
-📸 **Image à insérer ici :**  
+📸 **Image :**  
 ![Configuration réseau VM](images/vm_nsg.png)  
 *Légende : NSG de la VM-honeypot entièrement ouvert vers l’Internet.*
 
@@ -44,7 +44,7 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
 - Collecte des **événements de sécurité Windows** (4624, 4625, etc.)  
 - Point de centralisation pour Sentinel  
 
-📸 **Image à insérer ici :**  
+📸 **Image :**  
 ![Agent Monitoring](images/agent_config.png)  
 *Légende : Azure Monitoring Agent sur la VM-honeypot, envoyant les logs vers le Workspace.*
 
@@ -56,7 +56,7 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
 - Import d’une **Watchlist IP/géolocalisation**  
 - Création de règles et Workbooks pour détecter et visualiser l’activité malveillante ciblant le honeypot  
 
-📸 **Image à insérer ici :**  
+📸 **Image :**  
 ![Interface Sentinel](images/sentinel_watchlist.png)  
 *Légende : Sentinel affichant la Watchlist enrichie et les données collectées depuis le honeypot.*
 
@@ -64,18 +64,18 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
 
 ## 🔍 4. Analyse des tentatives de connexion (Event ID 4625)  
 **Requête KQL pour extraire les échecs de session RDP sur le honeypot :**
-📸 **Image à insérer ici :**  
+📸 **Image :**  
 
 ![Requête KQL](images/requete.png)
-
+*Légende : Requête KQL affichant les attaques survenues il y a 1 minute.*
 ![Geo Look Up](images/geolookup.png)
-
+*Légende : Géolocalisation IPadress.*
 ---
 
 ## 🌍 5. Carte d’attaque en temps réel
 Grâce à la Watchlist géographique, chaque adresse IP malveillante ciblant le honeypot est enrichie avec des métadonnées (pays, ville, latitude/longitude). Ces données sont ensuite visualisées sur une carte dynamique dans un Workbook Microsoft Sentinel, permettant de suivre en temps réel l’origine des attaques.
 
-📸 **Image à insérer ici :**  
+📸 **Image :**  
 ![Carte des attaques](images/attack_map.png)  
 *Légende : Visualisation géographique des attaques capturées par le honeypot.*
 
