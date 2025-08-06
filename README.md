@@ -19,7 +19,7 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
 - **Watchlist géographique** enrichissant chaque IP malveillante avec pays, ville, latitude/longitude  
 
 📸 **Image à insérer ici :**  
-![Architecture du Lab](images/schema.png)  
+![Architecture du Lab](images/shema.png)  
 *Légende : Schéma global mettant en évidence le honeypot exposé, le VNet, le NSG, le Log Analytics Workspace et Sentinel.*
 
 ---
@@ -66,7 +66,7 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
 **Requête KQL pour extraire les échecs de session RDP sur le honeypot :**
 📸 **Image à insérer ici :**  
 
-![Requête KQL](images/requete kql.png) 
+![Requête KQL](images/requete.png)
 
 ![Geo Look Up](images/geolookup.png)
 
