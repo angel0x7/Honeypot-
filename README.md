@@ -1,7 +1,7 @@
 # 🔐 Cyber Lab Azure – Mise en place d’un SOC avec Microsoft Sentinel
 
 ## 📘 Introduction
-Ce projet met en place un **SOC (Security Operations Center) ** dans Microsoft Azure, centré autour d’un **honeypot cloud**. La machine virtuelle exposée simule volontairement une cible vulnérable pour attirer et enregistrer de véritables tentatives d’attaque. Les logs de sécurité capturés sont ensuite centralisés, analysés et visualisés via **Microsoft Sentinel**, offrant un environnement opérationnel pour la détection de menaces et les opérations Blue Team.
+Ce projet met en place un SOC (Security Operations Center) dans Microsoft Azure, centré autour d’un **honeypot cloud**. La machine virtuelle exposée simule volontairement une cible vulnérable pour attirer et enregistrer de véritables tentatives d’attaque. Les logs de sécurité capturés sont ensuite centralisés, analysés et visualisés via **Microsoft Sentinel**, offrant un environnement opérationnel pour la détection de menaces et les opérations Blue Team.
 
 ---
 
@@ -102,5 +102,4 @@ Ce lab illustre comment un simple **honeypot** exposé peut devenir un point d�
 
 Ce projet constitue une excellente base pour développer des compétences en **Blue Team** et se familiariser avec les outils SIEM cloud.
 
----
 
