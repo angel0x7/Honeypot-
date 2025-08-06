@@ -1,4 +1,4 @@
-# 🔐 Rapport de Lab – Mise en place d’un SOC maison sur Azure avec Microsoft Sentinel
+# 🔐 Rapport de Lab – Mise en place d’un SOC sur Azure avec Microsoft Sentinel
 
 ## 📘 Introduction
 Ce projet met en place un **SOC (Security Operations Center) ** dans Microsoft Azure, centré autour d’un **honeypot cloud**. La machine virtuelle exposée simule volontairement une cible vulnérable pour attirer et enregistrer de véritables tentatives d’attaque. Les logs de sécurité capturés sont ensuite centralisés, analysés et visualisés via **Microsoft Sentinel**, offrant un environnement opérationnel pour la détection de menaces et les opérations Blue Team.
@@ -19,7 +19,7 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
 - **Watchlist géographique** enrichissant chaque IP malveillante avec pays, ville, latitude/longitude  
 
 📸 **Image à insérer ici :**  
-![Architecture du Lab](images/schema_lab.png)  
+![Architecture du Lab](images/schema.png)  
 *Légende : Schéma global mettant en évidence le honeypot exposé, le VNet, le NSG, le Log Analytics Workspace et Sentinel.*
 
 ---
@@ -65,8 +65,12 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
 ## 🔍 4. Analyse des tentatives de connexion (Event ID 4625)  
 **Requête KQL pour extraire les échecs de session RDP sur le honeypot :**
 📸 **Image à insérer ici :**  
+
 ![Requête KQL](images/requete kql.png) 
+
 ![Geo Look Up](images/geolookup.png)
+
+---
 
 ## 🌍 5. Carte d’attaque en temps réel
 Grâce à la Watchlist géographique, chaque adresse IP malveillante ciblant le honeypot est enrichie avec des métadonnées (pays, ville, latitude/longitude). Ces données sont ensuite visualisées sur une carte dynamique dans un Workbook Microsoft Sentinel, permettant de suivre en temps réel l’origine des attaques.
@@ -88,7 +92,7 @@ Grâce à la Watchlist géographique, chaque adresse IP malveillante ciblant le 
 ---
 
 ## ✅ Conclusion
-Ce lab illustre comment un simple **honeypot** exposé peut devenir un point d’observation puissant pour la cybersécurité opérationnelle. En centralisant les événements de sécurité dans un Log Analytics Workspace et en exploitant les capacités de **Microsoft Sentinel** (KQL, Watchlist, Workbooks), il est possible de :
+Ce lab illustre comment un simple **honeypot** exposé peut devenir un point d’observation pour la cybersécurité opérationnelle. En centralisant les événements de sécurité dans un Log Analytics Workspace et en exploitant les capacités de **Microsoft Sentinel** (KQL, Watchlist, Workbooks), il est possible de :
 
 - Surveiller en temps réel les tentatives d’intrusion contre un système vulnérable  
 - Analyser les tactiques et vecteurs d’attaque automatisés  
@@ -98,8 +102,3 @@ Ce projet constitue une excellente base pour développer des compétences en **B
 
 ---
 
-## 📎 Annexes
-- **Liste des requêtes KQL utilisées**  
-- **Modèle de Watchlist CSV** (Bloc IP + géolocalisation)  
-- **Lien vers la documentation Microsoft Sentinel**  
-- **Copies d’écran** des configurations de la VM, du Log Analytics Workspace et des Workbooks Sentinel  
