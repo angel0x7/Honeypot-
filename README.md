@@ -68,8 +68,10 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
 
 ![Requête KQL](images/requete.png)
 *Légende : Requête KQL affichant les attaques survenues il y a 1 minute.*
+
 ![Geo Look Up](images/geolookup.png)
 *Légende : Géolocalisation IPadress.*
+
 ---
 
 ## 🌍 5. Carte d’attaque en temps réel
