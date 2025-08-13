@@ -100,6 +100,6 @@ Ce lab illustre comment un simple **honeypot** exposé peut devenir un point d�
 - Analyser les tactiques et vecteurs d’attaque automatisés  
 - Visualiser l’origine géographique des attaques pour orienter la réponse  
 
-Ce projet constitue une excellente base pour développer des compétences en **Blue Team** et se familiariser avec les outils SIEM cloud.
+Ce projet constitue une excellente base pour développer mes compétences en **Blue Team** et me familiariser avec les outils SIEM cloud.
 
 
