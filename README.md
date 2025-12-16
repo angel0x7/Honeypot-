@@ -18,13 +18,13 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
 - **Microsoft Sentinel** connecté au Workspace  
 - **Watchlist géographique** enrichissant chaque IP malveillante avec pays, ville, latitude/longitude  
 
-📸 **Image :**  
+ **Capture :**  
 ![Architecture du Lab](images/shema.png)  
 *Légende : Schéma global mettant en évidence le honeypot exposé, le VNet, le NSG, le Log Analytics Workspace et Sentinel.*
 
 ---
 
-## ⚙️ 2. Configuration du honeypot
+##  2. Configuration du honeypot
 
 ###  VM Windows 10 (HONEYPOT)
 - **Rôle principal :** attirer les scanners et attaques automatisées  
@@ -35,7 +35,7 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
   - HTTP (80) / HTTPS (443)  
 - **IP publique statique**  
 
- **Image :**  
+ **Capture :**  
 ![Configuration réseau VM](images/vm_nsg.png)  
 *Légende : NSG de la VM-honeypot entièrement ouvert vers l’Internet.*
 
@@ -44,7 +44,7 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
 - Collecte des **événements de sécurité Windows** (4624, 4625, etc.)  
 - Point de centralisation pour Sentinel  
 
- **Image :**  
+ **Capture :**  
 ![Agent Monitoring](images/agent_config.png)  
 *Légende : Azure Monitoring Agent sur la VM-honeypot, envoyant les logs vers le Workspace.*
 
@@ -56,7 +56,7 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
 - Import d’une **Watchlist IP/géolocalisation**  
 - Création de règles et Workbooks pour détecter et visualiser l’activité malveillante ciblant le honeypot  
 
- **Image :**  
+ **Capture :**  
 ![Interface Sentinel](images/sentinel_watchlist.png)  
 *Légende : Sentinel affichant la Watchlist enrichie et les données collectées depuis le honeypot.*
 
@@ -64,7 +64,7 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
 
 ##  4. Analyse des tentatives de connexion (Event ID 4625)  
 **Requête KQL pour extraire les échecs de session RDP sur le honeypot :**
-📸 **Image :**  
+ **Capture :**  
 
 ![Requête KQL](images/requete.png)
 *Légende : Requête KQL affichant les attaques survenues il y a 1 minute.*
@@ -77,7 +77,7 @@ L’élément clé de ce lab est le **honeypot** : une VM Windows 10 volontairem
 ##  5. Carte d’attaque en temps réel
 Grâce à la Watchlist géographique, chaque adresse IP malveillante ciblant le honeypot est enrichie avec des métadonnées (pays, ville, latitude/longitude). Ces données sont ensuite visualisées sur une carte dynamique dans un Workbook Microsoft Sentinel, permettant de suivre en temps réel l’origine des attaques.
 
- **Image :**  
+ **Capture :**  
 ![Carte des attaques](images/attack_map.png)  
 *Légende : Visualisation géographique des attaques capturées par le honeypot.*
 
